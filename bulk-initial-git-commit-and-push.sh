@@ -11,6 +11,7 @@ do
   if [ -d "$d" ]; then
     export REPONAME=$d
     echo "Processing: $REPONAME"
+    git config --global --add safe.directory $REPONAME
     pushd $REPONAME > /dev/null
     echo "Inside: $PWD"
     echo "# $REPONAME" > README.md
